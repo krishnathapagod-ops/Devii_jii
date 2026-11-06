@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry Devii Jii ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffb6c9, #ff6f91, #ffc2d1);
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 25px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(150,0,50,0.2);
+    position: relative;
+    z-index: 2;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.heart {
+    font-size: 65px;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+h1 {
+    color: #ff3867;
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+h2 {
+    color: #e83e69;
+    margin: 15px 0;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.highlight {
+    color: #ff3867;
+    font-weight: bold;
+}
+
+button {
+    border: none;
+    background: linear-gradient(45deg, #ff3867, #ff7597);
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px #ffb0c3;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+}
+
+#secret {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff0f4;
+    border-radius: 15px;
+    color: #e83e69;
+    animation: appear 0.8s ease;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #e07891;
+}
+
+/* Floating hearts */
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 22px;
+    animation: floatUp linear forwards;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    top: -15px;
+    width: 9px;
+    height: 12px;
+    z-index: 10;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width:480px) {
+    .card {
+        padding: 28px 18px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="heart">❤️</div>
+
+    <h1>I'm Sorry, Devii Jii 🥺</h1>
+
+    <h2>My Special Person 💗</h2>
+
+    <p>
+        I don't know how to express everything in words,
+        but from the bottom of my heart,
+        <span class="highlight">I'm truly sorry</span>
+        for whatever I did that hurt you.
+    </p>
+
+    <p>
+        Maybe I made mistakes, maybe I didn't understand
+        your feelings, or maybe I did something that made
+        you upset.
+    </p>
+
+    <p>
+        But please believe me, hurting you was never
+        what I wanted. Your smile means so much to me.
+    </p>
+
+    <h2>I LOVE YOU SO MUCH ❤️</h2>
+
+    <p>
+        You are special to me, Devii Jii.
+        I don't want my silly mistakes to come between us.
+        I want to make you smile, care for you,
+        and make beautiful memories together. 🥹
+    </p>
+
+    <button onclick="showLove()">
+        Click Here, Devii Jii 💌
+    </button>
+
+    <div id="secret">
+        <h2>One More Thing ❤️</h2>
+        <p>
+            No matter how many times I say sorry,
+            I want you to know that my love for you
+            is real. Please forgive me when you're ready.
+        </p>
+        <h2>You're My Favourite Person! 🫶</h2>
+        <p>Forever sending you hugs and kisses! 😘</p>
+    </div>
+
+    <div class="footer">
+        Made with lots of love, just for you ❤️
+        <br>
+        Yours, Always 🥺
+    </div>
+
+</div>
+
+<script>
+function showLove() {
+    document.getElementById("secret").style.display = "block";
+    launchConfetti();
+
+    document.querySelector("button").innerText =
+        "I LOVE YOU DEVII JII ❤️";
+}
+
+// Confetti animation
+function launchConfetti() {
+    const colors = [
+        "#ff3867", "#ffb6c9", "#ff69b4",
+        "#ffd700", "#ff1493", "#ffffff"
+    ];
+
+    for (let i = 0; i < 130; i++) {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
+
+        confetti.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
+
+        confetti.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => confetti.remove(), 6000);
+    }
+}
+
+// Floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.innerHTML = ["❤️", "💕", "💗", "💖", "🥺"][
+        Math.floor(Math.random() * 5)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(createHeart, 500);
+
+// Initial celebration
+setTimeout(launchConfetti, 700);
+</script>
+
+</body>
+</html>
